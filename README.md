@@ -12,4 +12,4 @@ quickly morphed into a training tool for the engineers on my team.
 ## Where it is Now
 **This is not an example of modern UX development.**
 This project is now used to demonstrate technical writing skills in an HTML format.
-It also show smy decades-long commitment to documentation and developer advocacy.
+It also shows my decades-long commitment to documentation and developer advocacy.
