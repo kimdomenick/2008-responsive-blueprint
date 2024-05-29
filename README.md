@@ -13,3 +13,6 @@ quickly morphed into a training tool for the engineers on my team.
 **This is not an example of modern UX development.**
 This project is now used to demonstrate technical writing skills in an HTML format.
 It also shows my decades-long commitment to documentation and developer advocacy.
+
+## Preview the Legacy Tool Here
+https://kimdomenick.github.io/2008-responsive-blueprint/
