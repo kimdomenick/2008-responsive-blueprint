@@ -1,7 +1,7 @@
 # 2008-responsive-blueprint
 Legacy Responsive Web Training Tool for Developers
 
-## Where it Started>
+## Where it Started
 Somewhere between **2008 and 2010**, I created this responsive template and mini-grid
 system as a starter kit for other developers to copy and use in their projects.
 
