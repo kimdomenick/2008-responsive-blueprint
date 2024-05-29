@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="styles/common.css" />
+	<link rel="stylesheet" type="text/css" href="styles/responsive.css" />
+	<script src="scripts/jquery-1.6.2.min.js"></script>
+	<script>
+	 // DOM ready
+	 $(function() {
+	   
+     	 // Create the dropdown base
+      	$("<select />").appendTo("nav");
+      
+     	 // Create default option "Go to..."
+      	$("<option />", {
+         	"selected": "selected",
+         	"value"   : "",
+         	"text"    : "Go to..."
+      	}).appendTo("nav select");
+      
+      	// Populate dropdown with menu items
+     	 $("nav a").each(function() {
+       	var el = $(this);
+       	$("<option />", {
+           		"value"   : el.attr("href"),
+           		"text"    : el.text()
+       	}).appendTo("nav select");
+      	});
+      
+	   // To make dropdown actually work
+	  
+      	$("nav select").change(function() {
+        	window.location = $(this).find("option:selected").val();
+      	});
+	 
+	 });
+	</script>
+</head>
+<body>
+  <div id="container">
+    <div id="top-bar">
+    </div>
+    <header>
+      <div id="main-header">
+        <div class="logo column-half">
+          <img src="images/newlogo.png">
+        </div>
+        <div class="right-header column-half" >
+          <h4>GENERIC HTML5<br>Responsive Design Template</h4>
+        </div>
+      </div> 
+      <nav class="menu">
+        <ul class="menu-list">
+          <li class="menu-item first"><a class="menu-item-link" href="home.html">Home</a></li>
+          <li class="menu-item"><a class="menu-item-link" href="info.html">General Info</a></li>
+          <li class="menu-item"><a class="menu-item-link" href="typography.html">Typography & Icons</a></li>
+          <li class="menu-item"><a class="menu-item-link" href="pagestructure.html">Page Layouts</a></li>
+          <li class="menu-item"><a class="menu-item-link" href="navigation.html">Navigation & Menus</a></li>
+          <li class="menu-item"><a class="menu-item-link" href="tables.html">Tables</a></li>
+          <li class="menu-item"><a class="menu-item-link" href="forms.html">Forms</a></li>
+        </ul>
+      </nav>
+    </header>
+		<div id="content">
+			<div id="main-content">
+				<h1 class="pagetitle">General Info</h1>
+				<h3>Steps and things to remember when making an application responsive</h3>
+				<div class="box pad">
+					<ol>
+						<li>Use a !DOCTYPE of just html.  The long URL to the W3C is no longer required.
+							<pre><code>!DOCTYPE html</code></pre>
+						</li>
+						<li>Use this meta tag to force IE to use the most up to date rendering mode.<br>
+							<pre><code>meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"</code></pre>
+						</li>
+						<li>Use this meta tag to set the scale of the viewport.<br>
+							<pre><code>meta name="viewport" content="width=device-width, initial-scale=1.0"</code></pre>
+						</li>
+						<li>Link to the stylesheets common and responsive.
+							<pre><code>link rel="stylesheet" type="text/css" href="styles/common.css" </code></pre>
+							<pre><code>link rel="stylesheet" type="text/css" href="styles/responsive.css" </code></pre>
+						</li>
+						<li>When a mobile menu is needed, link to jquery-162.min.js and add the script that changes
+						the nav tag into a select list. See more information in <a href="navigation.html">Navigation & Menus</a>.
+							<pre><code>script src="scripts/jquery-1.6.2.min.js"</code></pre>
+						</li>
+						<li>Choose a column layout based on the page's needs.  In many cases, the No Column
+						layout might be appropriate.
+						</li>
+						<li>When using Explore All Column Layouts, each row must be cleared with a div class of clear-both.  Although,
+						this is not semantically correct, it works for now.
+						<pre><code>div class="clear-both"</code></pre>
+						</li>
+						<li>When working with images, anything smaller than 250px in width can be inserted as is.  Images used within columns, such as the <a href="home.html">Home Page</a> should be assigned a
+						class="gallery".  Working with larger images may take some experimentation and additional code.</li>
+						<li>Use classes of box, pad, info, inner, and shadow to create space and effects as needed. The <a href="pagestructure.html">Column Layout</a>
+						pages show examples of how these may be used. Often they are combined with one another for the best visual appeal. 
+						</li>
+						<li>Read about and see examples of how to implement <a href="tables.html">Tables </a> and <a href="forms.html"> Forms</a> before coding them.</li>
+						<li>The same Explore All Column Layouts that can be applied to the content area can also be applied to the blue footer area.  This
+						can be useful for adding additional menus, links, or information to the bottom region of a page.  In this project, all pages have the same
+						Footer through a footerInclude file.  But if needed, each page could have its own unique code in that region.</li>
+						<li>IE8 and below do not behave well with many responsive templates.  IE9 mostly behaves or at least degrades with class.  Chrome, FF, and Safari browsers
+						all play nicely.</li>
+					</ol>
+				</div>
+			</div>
+			<div class="clear-both">
+			</div>
+			<br /><br />
+			<div class="box pad notice">
+				<img src="images/yes-white.png" alt="checkmark"><span style="vertical-align: middle; padding-left: 8px;">I understand this topic!</span>
+				<a class="button" href="typography.html">Go to Typography</a>
+			</div>
+			
+		</div><!-- end content -->
+		<div id="footer-wrapper">	
+			<footer>
+				<div id="main-footer">
+					<div class="column-quarter">
+						<div class="inner">
+							<h4> <img src="images/no-white.png"> OPTIONAL MENU</h4>
+							<ul class="optmenu">
+								<li><a href="">Link One</a></li>
+								<li><a href="">Link Two</a></li>
+								<li><a href="">Link Three</a></li>
+							</ul>
+						</div>
+					</div>		
+					<div class="column-quarter">
+						<div class="inner">
+							<h4><img src="images/edit-white.png"> OPTIONAL MENU</h4>
+							<ul class="optmenu">
+								<li><a href="">Link One</a></li>
+								<li><a href="">Link Two</a></li>
+								<li><a href="">Link Three</a></li>
+							</ul>
+						</div>	
+					</div>
+					<div class="column-quarter">
+						<div class="inner">
+							<h4><img src="images/yes-white.png"> OPTIONAL MENU</h4>
+							<ul class="optmenu">
+								<li><a href="">Link One</a></li>
+								<li><a href="">Link Two</a></li>
+								<li><a href="">Link Three</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="column-quarter">
+						<div class="inner">
+							<h4><img src="images/search-white.png"> OPTIONAL MENU</h4>
+							<ul class="optmenu">
+								<li><a href="">Link One</a></li>
+								<li><a href="">Link Two</a></li>
+								<li><a href="">Link Three</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="clear-both"></div>
+				</div> 
+			</footer>
+			<div id="bottom-bar"></div>
+		</div><!-- end footer wrapper --> 
+	</div><!-- end container --> 
+</body>
+</html>

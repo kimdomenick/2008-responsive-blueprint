@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="styles/common.css" />
+	<link rel="stylesheet" type="text/css" href="styles/responsive.css" />
+	<script src="scripts/jquery-1.6.2.min.js"></script>
+	<script>
+		// DOM ready
+		$(function () {
+
+			// Create the dropdown base
+			$("<select />").appendTo("nav");
+
+			// Create default option "Go to..."
+			$("<option />", {
+				"selected": "selected",
+				"value": "",
+				"text": "Go to..."
+			}).appendTo("nav select");
+
+			// Populate dropdown with menu items
+			$("nav a").each(function () {
+				var el = $(this);
+				$("<option />", {
+					"value": el.attr("href"),
+					"text": el.text()
+				}).appendTo("nav select");
+			});
+
+			// To make dropdown actually work
+
+			$("nav select").change(function () {
+				window.location = $(this).find("option:selected").val();
+			});
+
+		});
+	</script>
+</head>
+
+<body>
+	<div id="container">
+		<div id="top-bar">
+		</div>
+		<header>
+			<div id="main-header">
+				<div class="logo column-half">
+					<img src="images/newlogo.png">
+				</div>
+				<div class="right-header column-half">
+					<h4>GENERIC HTML5<br>Responsive Design Template</h4>
+				</div>
+			</div>
+		</header>
+		<div id="content">
+			<div id="main-content">
+				<h1 class="pagetitle">Responsive Blueprint - an online training tool by Kim Domenick</h1>
+				<div class="column-third">
+					<div class="inner">
+						<div class="box pad shadow">
+							<h2>Where it Started</h2>
+							<p>Somewhere between <strong>2008 and 2010</strong>, I created this responsive template and mini-grid
+								system
+								as a starter kit for other developers to copy and
+								use in their projects. Responsive design was a new "trend" in web development, and many developers were
+								still learning how to do it efficiently.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="column-third">
+					<div class="inner">
+						<div class="box pad shadow">
+							<h2>Where it Went Next</h2>
+							<p>
+								It quickly morphed into a training tool for developers, since at the time,
+								responsive concepts were still new to many of us.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="column-third">
+					<div class="inner">
+						<div class="box pad shadow">
+							<h2>Where it is Now</h2>
+							<p><strong>This is not an example of modern UX development.</strong>
+								This project is now used to demonstrate technical writing
+								and documentation skills in an HTML format.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="clear-both">
+				</div>
+
+				<div class="column">
+					<div class="inner">
+						<div class="box pad shadow info">
+							<h2>Ready?</h2>
+							<br />
+							<br />
+							<a class="button" href="home.html">Enter Responsive Blueprint</a>
+						</div>
+					</div>
+				</div>
+				<div class="clear-both">
+				</div>
+			</div>
+		</div>
+
+		<div id="footer-wrapper">
+			<footer>
+				<div id="main-footer">
+					<div class="column-quarter">
+						<div class="inner">
+							<h4> <img src="images/no-white.png"> OPTIONAL MENU</h4>
+							<ul class="optmenu">
+								<li><a href="">Link One</a></li>
+								<li><a href="">Link Two</a></li>
+								<li><a href="">Link Three</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="column-quarter">
+						<div class="inner">
+							<h4><img src="images/edit-white.png"> OPTIONAL MENU</h4>
+							<ul class="optmenu">
+								<li><a href="">Link One</a></li>
+								<li><a href="">Link Two</a></li>
+								<li><a href="">Link Three</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="column-quarter">
+						<div class="inner">
+							<h4><img src="images/yes-white.png"> OPTIONAL MENU</h4>
+							<ul class="optmenu">
+								<li><a href="">Link One</a></li>
+								<li><a href="">Link Two</a></li>
+								<li><a href="">Link Three</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="column-quarter">
+						<div class="inner">
+							<h4><img src="images/search-white.png"> OPTIONAL MENU</h4>
+							<ul class="optmenu">
+								<li><a href="">Link One</a></li>
+								<li><a href="">Link Two</a></li>
+								<li><a href="">Link Three</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="clear-both"></div>
+				</div>
+			</footer>
+			<div id="bottom-bar"></div>
+		</div><!-- end footer wrapper -->
+	</div><!-- end container -->
+</body>
+
+</html>
